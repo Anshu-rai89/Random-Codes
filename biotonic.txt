@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+int mxlenth(int a[],int n)
+{
+    int i=0,j=0,k=0,mxln=1;
+    while(i<n-1)
+    {
+        while((i<n-1) && a[i]<=a[i+1])
+        {
+            i++;
+        }
+            while((i<n-1)&& (a[i]>=a[i+1]))
+            {
+                if((i<n-1)&&(a[i]>=a[i+1]))
+                {
+                    j=i+1;
+                    i++;
+                }
+            }
+                mxln= max(mxln,i-(k-1));
+                k=j;
+            
+        }
+        return mxln;
+    }
+    int main()
+    {
+        int i,t,n,l;
+        cin>>t;
+        while(t--)
+        {
+            cin>>n;
+            int a[n];
+            for(i=0;i<n;i++)
+            {
+                cin>>a[i];
+            }
+            l=mxlenth(a,n);
+            cout<<l<<endl;
+
+        }
+    }

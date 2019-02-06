@@ -1,0 +1,30 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+bool stringpalindrome(char *s,int st,int l)
+{if(st>=l)
+{
+    return true;
+}
+if(s[st]==s[l])
+{
+    stringpalindrome(s,st+1,l-1);
+}
+else
+{
+    return false;
+}
+    
+}
+int main() {
+    char s[1000];
+    cin>>s;
+    int l=strlen(s);
+   if(stringpalindrome(s,0,l-1))
+   {
+       cout<<"true";
+   }
+   else{
+       cout<<"false";
+   }
+}
